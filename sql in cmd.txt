@@ -1,0 +1,287 @@
+Microsoft Windows [Version 10.0.19045.4046]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p -h localhost
+Enter password: ****
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p -h localhost:3307
+Enter password: ****
+ERROR 2005 (HY000): Unknown MySQL server host 'localhost:3307' (11001)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p -h localhost
+Enter password: ****
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p 3307 -h localhost
+Enter password: ****
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -h 127.0.0.1 -P 3307 -u root -p itvedant
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| itvedant           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.24 sec)
+
+mysql> create table student1(sid int
+    ->
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 3
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| itvedant           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> mysql -h 127.0.0.1 -P 3307 -u root
+    -> -p itvedant
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> exit
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -h 127.0.0.1 -P 3307 -u root
+-p itvedant
+
+
+
+
+
+exit' at line 1
+mysql> exit
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p 3307 -h localhost
+Enter password: ****
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -h 127.0.0.1 -P 3307 -u root
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -h 127.0.0.1 -P 3307 -u root -p itvedant
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use database itvedant
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use itvedant
+Database changed
+mysql> bye
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bye' at line 1
+mysql> exit
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -h 127.0.0.1 -P 3307 -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit
+Bye
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -h localhost -P 3307 -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use itvedant
+Database changed
+mysql> create table student1(
+    -> S_id int,S_name varchar(300));
+Query OK, 0 rows affected (0.54 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_itvedant |
++--------------------+
+| student            |
+| student1           |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> desc student1;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| S_id   | int          | YES  |     | NULL    |       |
+| S_name | varchar(300) | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table student1 add colum age int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'age int not null' at line 1
+mysql> alter table student1 add column age int not null;
+Query OK, 0 rows affected (0.36 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student1;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| S_id   | int          | YES  |     | NULL    |       |
+| S_name | varchar(300) | YES  |     | NULL    |       |
+| age    | int          | NO   |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table student1 modify S_id int primary key;
+Query OK, 0 rows affected (1.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student1 modify S_name varchar(300) not null;
+Query OK, 0 rows affected (0.70 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student1;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| S_id   | int          | NO   | PRI | NULL    |       |
+| S_name | varchar(300) | NO   |     | NULL    |       |
+| age    | int          | NO   |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table student1 rename employee;
+Query OK, 0 rows affected (0.32 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_itvedant |
++--------------------+
+| employee           |
+| student            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE table_name
+    ->
+    -> ;
+ERROR 1146 (42S02): Table 'itvedant.table_name' doesn't exist
+mysql> ALTER TABLE employee rename COLUMN S_id TO id;
+Query OK, 0 rows affected (0.37 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee rename COLUMN S_name TO name;
+Query OK, 0 rows affected (0.73 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(300) | NO   |     | NULL    |       |
+| age   | int          | NO   |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table student1 add column last name varchar(300) after name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name varchar(300) after name' at line 1
+mysql> alter table employee add column last name varchar(300) after name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name varchar(300) after name' at line 1
+mysql> alter table employee add column last_name varchar(300) after name;
+Query OK, 0 rows affected (0.52 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | int          | NO   | PRI | NULL    |       |
+| name      | varchar(300) | NO   |     | NULL    |       |
+| last_name | varchar(300) | YES  |     | NULL    |       |
+| age       | int          | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table employee add column gov_id bigint before id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before id' at line 1
+mysql> alter table employee add column gov_id int before id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before id' at line 1
+mysql> alter table employee add column gov_id int first;
+Query OK, 0 rows affected (1.97 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| gov_id    | int          | YES  |     | NULL    |       |
+| id        | int          | NO   | PRI | NULL    |       |
+| name      | varchar(300) | NO   |     | NULL    |       |
+| last_name | varchar(300) | YES  |     | NULL    |       |
+| age       | int          | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table employee add column gov_id bigint first;
+ERROR 1060 (42S21): Duplicate column name 'gov_id'
+mysql> alter table student1 modify gov_id bigint unique;
+ERROR 1146 (42S02): Table 'itvedant.student1' doesn't exist
+mysql> alter table employee modify gov_id bigint unique;
+Query OK, 0 rows affected (1.94 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>
