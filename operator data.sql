@@ -1,3 +1,5 @@
+show databases;
+use itvedant;
 show tables;
 select * from student;
 select * from student where first_name like 's%';               # for fetch data by first character of first name
@@ -24,3 +26,4 @@ select distinct paid_fees from studentdata order by paid_fees limit 3;          
 select * from studentdata where id in (1,3,5);     #it will display data of selected multiple id.
 update studentdata set paid_fees = paid_fees-(paid_fees*0.15) where id=8;  # its use updat fees
 select * from studentdata;
+select * from studentdata where id between 3 and 8;
