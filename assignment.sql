@@ -1,0 +1,14 @@
+use itvedant;
+show tables;
+select * from emp;
+update emp set ename='payal' where id= 6;
+insert into emp values(7,'raju','sales',4000,'');
+insert into emp(id,ename,department,salary) values(8,'om','helper',3000);
+select * from emp where ename like 'P%';
+select * from emp where salary between 3000 and 5000;
+select * from emp order by salary desc ;
+select ename as name,department as dept from emp limit 2;
+select * from emp where ename like '_a%';
+select id,ename from emp where location in ('mumbai','pune','chennai');
+select ename from emp where location is null or location = '';
+select * from emp order by salary;
