@@ -6,6 +6,7 @@ cemail varchar(50),
 phone bigint,
 address varchar(50)
 );
+desc payment;
  
  create table product12(
  pid int primary key,
@@ -94,5 +95,6 @@ select c.cust_id as id,
        p.payment_method
        from customer12 c  inner join orders12 o on c.cust_id = o.cust_id inner join ordersdetails12 od on od.order_id = o.order_id
        inner join payment p on p.order_id = od.order_id inner join product12 pr on od.pid = pr.pid;
+       
 
 
