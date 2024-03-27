@@ -96,5 +96,27 @@ select c.cust_id as id,
        from customer12 c  inner join orders12 o on c.cust_id = o.cust_id inner join ordersdetails12 od on od.order_id = o.order_id
        inner join payment p on p.order_id = od.order_id inner join product12 pr on od.pid = pr.pid;
        
+       
+       select * from customer12 inner join orders12 on customer12.cust_id = orders12.cust_id order by customer12.cust_id;
+       
+       
+       select c.cust_id as id,
+       c.cname as customer_name,
+       c.cemail as email,
+       c.address,
+       o.order_id,
+       o.order_date,
+       od.pid,
+       pr.pname as product_name,
+       pr.price,
+       pr.ptype,
+       od.quantity,
+       p.payment_id,
+       p.payment_date,
+       p.payment_amount,
+       p.payment_method
+       from customer12 c  inner join orders12 o on c.cust_id = o.cust_id inner join ordersdetails12 od on od.order_id = o.order_id
+       inner join payment p on p.order_id = od.order_id inner join product12 pr on od.pid = pr.pid order by p.payment_amount desc limit 3;
 
-
+       
+       
